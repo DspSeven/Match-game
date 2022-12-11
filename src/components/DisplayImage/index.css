@@ -1,0 +1,14 @@
+.display-images {
+  height: 15vh;
+  width: 7vw;
+}
+.display-list-container {
+  list-style-type: none;
+  margin-right: 7px;
+  border-radius: 7px;
+  border-width: 0px;
+}
+.button {
+  background-color: transparent;
+  border-width: 0px;
+}

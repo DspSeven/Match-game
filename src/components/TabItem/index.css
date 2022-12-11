@@ -1,0 +1,19 @@
+.button-highlight-color {
+  color: #fec653;
+  text-decoration: underline;
+  text-decoration-color: #fec653;
+  background-color: transparent;
+  border-width: 0px;
+  font-size: 25px;
+}
+.button-color {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  background-color: transparent;
+  border-width: 0px;
+  font-size: 25px;
+}
+.tab-list-container {
+  list-style-type: none;
+}

@@ -1,15 +1,17 @@
-const TabItem = props => {
-  const {tabDetails, selectedCategory} = props
-  const {tabId, displayText} = tabDetails
+import './index.css'
 
+const TabItem = props => {
+  const {tabDetails, selectedCategory, isActive} = props
+  const {tabId, displayText} = tabDetails
+  const isAct = isActive ? 'button-highlight-color' : 'button-color'
   // sends selected category
   const selectCategory = () => {
     selectedCategory(tabId)
   }
 
   return (
-    <li>
-      <button type="button" onClick={selectCategory}>
+    <li className="tab-list-container">
+      <button type="button" onClick={selectCategory} className={isAct}>
         {displayText}
       </button>
     </li>

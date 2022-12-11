@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import TabItem from '../TabItem'
 import DisplayImage from '../DisplayImage'
+import './index.css'
 
 //
 const tabsList = [
@@ -299,22 +300,23 @@ class GamePage extends Component {
   // run the game
   getGamePage = searchResults => {
     console.log('Game page Initialized')
-    const {image} = this.state
+    const {image, categoryType} = this.state
     return (
-      <div>
+      <div className="get-game-page">
         {/* adding Game Page */}
-        <div>
-          <img src={image} alt="match" />
-          <ul>
+        <div className="sub-container">
+          <img src={image} alt="match" className="display-image" />
+          <ul className="tab-item-container">
             {tabsList.map(eachTab => (
               <TabItem
                 tabDetails={eachTab}
                 key={eachTab.tabId}
                 selectedCategory={this.selectedCategory}
+                isActive={eachTab.tabId === categoryType}
               />
             ))}
           </ul>
-          <ul>
+          <ul className="display-image-container">
             {searchResults.map(eachImage => (
               <DisplayImage
                 imageDetails={eachImage}
@@ -349,6 +351,7 @@ class GamePage extends Component {
         <img
           src="https://assets.ccbp.in/frontend/react-js/match-game-trophy.png"
           alt="trophy"
+          className="trophy-class"
         />
         <p>YOUR SCORE</p>
         <p>{score}</p>
@@ -370,23 +373,24 @@ class GamePage extends Component {
     const {score, timer} = this.state
     const stringifiedScore = `${score}`
     return (
-      <ul>
-        <li>
+      <ul className="nav-container">
+        <li className="list-container">
           <div>
             <img
               src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
               alt="website logo"
+              className="website-logo"
             />
-            <h1>Match Game</h1>
           </div>
-          <div>
-            <p>score: {stringifiedScore}</p>
-            <div>
+          <div className="score-container">
+            <p className="para-one">score: {stringifiedScore}</p>
+            <div className="timer-container">
               <img
                 src="https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png"
                 alt="timer"
+                className="timer-logo"
               />
-              <p>{timer} sec</p>
+              <p className="para-two">{timer} sec</p>
             </div>
           </div>
         </li>
